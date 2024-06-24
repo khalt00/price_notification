@@ -1,4 +1,4 @@
-#Telegram Price Alert Bot
+# Telegram Price Alert Bot
 
 -    Track stock and coin prices in real-time.
 -    Set custom price thresholds for each stock or coin.
