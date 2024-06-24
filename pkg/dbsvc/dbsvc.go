@@ -10,11 +10,13 @@ import (
 	"github.com/syndtr/goleveldb/leveldb"
 )
 
-type LevelDBValueExample struct {
-	Datas []string
+type PriceNotification struct {
+	Symbol string
+	High   float64
+	Low    float64
 }
 
-func PutLevelDB(db *leveldb.DB, key int64, value LevelDBValueExample) error {
+func PutLevelDB(db *leveldb.DB, key int64, value []PriceNotification) error {
 	// Create a bytes buffer to hold the encoded value
 	var buffer bytes.Buffer
 	// Create a new encoder and encode the value into the buffer
@@ -37,8 +39,8 @@ func PutLevelDB(db *leveldb.DB, key int64, value LevelDBValueExample) error {
 	return nil
 }
 
-func GetLevelDB(db *leveldb.DB, key int64) (LevelDBValueExample, error) {
-	var value LevelDBValueExample
+func GetLevelDB(db *leveldb.DB, key int64) ([]PriceNotification, error) {
+	var value []PriceNotification
 
 	// Convert key to bytes
 	keyBytes, err := utils.Int64ToBytes(key)

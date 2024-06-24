@@ -18,7 +18,6 @@ func main() {
 	if err != nil {
 		log.Fatal("ERROR - Failed to load config")
 	}
-
 	db, err := leveldb.OpenFile(config.LEVEL_DB_PATH, &opt.Options{})
 	if err != nil {
 		log.Fatal("ERROR - failed to load config")
@@ -34,9 +33,5 @@ func main() {
 	jobs := job.NewBackgroundJob(config, teleBot, db)
 	jobs.Start()
 
-	go teleService.Listener()
-
-	for {
-	}
-
+	teleService.Listener()
 }

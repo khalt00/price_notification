@@ -6,6 +6,12 @@ import (
 	"github.com/spf13/viper"
 )
 
+type PriceNotification struct {
+	Symbol string
+	High   float64
+	Low    float64
+}
+
 type Configuration struct {
 	CRON_PRICE_TIME      string
 	CRON_BOT_STILL_ALIVE string
@@ -13,6 +19,8 @@ type Configuration struct {
 	TELEGRAM_BOT_TOKEN     string
 	LEVEL_DB_PATH          string
 	COIN_MARKETCAP_API_KEY string
+
+	PRICE_NOTIFICATIONS []PriceNotification
 }
 
 var Config *Configuration

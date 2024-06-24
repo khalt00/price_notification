@@ -1,0 +1,16 @@
+CRON_PRICE_TIME: "@every 0h0m10s"
+CRON_BOT_STILL_ALIVE: "@every 0h30m"
+
+TELEGRAM_BOT_TOKEN: ""
+LEVEL_DB_PATH: "./db"
+
+COIN_MARKETCAP_API_KEY: ""
+
+PRICE_NOTIFICATIONS:
+  - symbol: BTC-USD
+    high: 696969
+    low: 45000
+  - symbol: ETH-USD
+    high: 5000
+    low: 3000
+    
